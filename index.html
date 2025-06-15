@@ -4,6 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Blacksmith Portfolio</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
     <style>
       body {
         font-family: sans-serif;
@@ -73,12 +78,24 @@
                 file.name.match(/\.(jpg|jpeg|png|gif)$/i)
             )
             .forEach((file) => {
+              const link = document.createElement("a");
+              link.href = `https://raw.githubusercontent.com/${repoOwner}/${repoName}/${branch}/${folderPath}/${file.name}`;
+              link.setAttribute("data-lightbox", "blacksmith");
+              link.setAttribute(
+                "data-title",
+                file.name.replace(/\.[^.]+$/, "")
+              );
+
               const img = document.createElement("img");
-              img.src = `https://raw.githubusercontent.com/${repoOwner}/${repoName}/${branch}/${folderPath}/${file.name}`;
+              img.src = link.href;
               img.alt = file.name;
               img.loading = "lazy";
-              img.onerror = () => console.error("Broken image:", img.src);
-              gallery.appendChild(img);
+              img.style.transition = "transform 0.2s ease";
+              img.onmouseover = () => (img.style.transform = "scale(1.02)");
+              img.onmouseout = () => (img.style.transform = "scale(1.0)");
+
+              link.appendChild(img);
+              gallery.appendChild(link);
             });
         })
         .catch((err) => {
