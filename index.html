@@ -11,21 +11,42 @@
         margin: 0;
         padding: 1rem;
       }
+
       .gallery {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-        gap: 12px;
+        column-count: 4;
+        column-gap: 12px;
+        max-width: 1200px;
+        margin: auto;
       }
+
+      .gallery a {
+        break-inside: avoid;
+        display: block;
+        margin-bottom: 12px;
+      }
+
       .gallery img {
         width: 100%;
         height: auto;
-        object-fit: cover;
         border-radius: 6px;
         box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
         transition: transform 0.2s ease;
       }
+
       .gallery img:hover {
         transform: scale(1.02);
+      }
+
+      @media (max-width: 800px) {
+        .gallery {
+          column-count: 2;
+        }
+      }
+
+      @media (max-width: 500px) {
+        .gallery {
+          column-count: 1;
+        }
       }
     </style>
   </head>
