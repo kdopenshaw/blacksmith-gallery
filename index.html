@@ -87,10 +87,7 @@
               link.href = imageUrl;
               link.className = "glightbox";
               link.setAttribute("data-gallery", "blacksmith");
-              link.setAttribute(
-                "data-title",
-                file.name.replace(/\.[^.]+$/, "")
-              );
+              // link.setAttribute("data-title", file.replace(/\.[^.]+$/, ""));
 
               const img = document.createElement("img");
               img.src = imageUrl;
