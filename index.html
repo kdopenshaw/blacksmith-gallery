@@ -34,9 +34,10 @@
     <div class="gallery" id="gallery"></div>
 
     <script>
-      const repoOwner = "kdopenshaw"; // <- change this
-      const repoName = "blacksmith-gallery"; // <- change this
+      const repoOwner = "kdopenshaw";
+      const repoName = "blacksmith-gallery";
       const folderPath = "images";
+      const branch = "main";
 
       fetch(
         `https://corsproxy.io/?https://api.github.com/repos/${repoOwner}/${repoName}/contents/${folderPath}`
@@ -48,17 +49,19 @@
             .filter(
               (file) =>
                 file.type === "file" &&
-                file.name.match(/\.(jpg|jpeg|png|gif|png)$/i)
+                file.name.match(/\.(jpg|jpeg|png|gif)$/i)
             )
             .forEach((file) => {
               const img = document.createElement("img");
-              img.src = `https://raw.githubusercontent.com/${repoOwner}/${repoName}/main/${folderPath}/${file.name}`;
+              img.src = `https://raw.githubusercontent.com/${repoOwner}/${repoName}/${branch}/${folderPath}/${file.name}`;
               img.alt = file.name;
+              img.loading = "lazy";
+              img.onerror = () => console.error("Broken image:", img.src);
               gallery.appendChild(img);
             });
         })
         .catch((err) => {
-          console.error("Failed to load images:", err);
+          console.error("Fetch failed:", err);
         });
     </script>
   </body>
