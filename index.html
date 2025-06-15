@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Blacksmith Portfolio</title>
     <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css"
+      href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css"
       rel="stylesheet"
     />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
     <style>
       body {
         font-family: sans-serif;
@@ -83,15 +83,17 @@
             )
             .forEach((file) => {
               const link = document.createElement("a");
-              link.href = `https://raw.githubusercontent.com/${repoOwner}/${repoName}/${branch}/${folderPath}/${file.name}`;
-              link.setAttribute("data-lightbox", "blacksmith");
+              const imageUrl = `https://raw.githubusercontent.com/${repoOwner}/${repoName}/${branch}/${folderPath}/${file.name}`;
+              link.href = imageUrl;
+              link.className = "glightbox";
+              link.setAttribute("data-gallery", "blacksmith");
               link.setAttribute(
                 "data-title",
                 file.name.replace(/\.[^.]+$/, "")
               );
 
               const img = document.createElement("img");
-              img.src = link.href;
+              img.src = imageUrl;
               img.alt = file.name;
               img.loading = "lazy";
               img.style.transition = "transform 0.2s ease";
@@ -101,6 +103,8 @@
               link.appendChild(img);
               gallery.appendChild(link);
             });
+
+          const lightbox = GLightbox({ selector: ".glightbox" });
         })
         .catch((err) => {
           console.error("Fetch failed:", err);
