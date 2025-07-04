@@ -58,10 +58,323 @@
           column-count: 1;
         }
       }
+
+      .featured-section {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        max-width: 1200px;
+        margin: 2rem auto;
+        background: #f7f7f7;
+        border-radius: 12px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+        padding: 2rem 1rem;
+        gap: 2rem;
+        flex-wrap: wrap;
+      }
+      .featured-section .featured-image-link {
+        flex: 3 1 400px;
+        display: block;
+        max-width: 700px;
+        min-width: 220px;
+      }
+      .featured-section img {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+        transition: transform 0.2s ease;
+        cursor: pointer;
+      }
+      .featured-section img:hover {
+        transform: scale(1.02);
+      }
+      .featured-section .featured-text {
+        flex: 1 1 180px;
+        min-width: 120px;
+        font-size: 1rem;
+        line-height: 1.5;
+        color: #333;
+        margin-left: 0.5rem;
+      }
+      .featured-section h2 {
+        margin-top: 0;
+        font-size: 1.3rem;
+      }
+      @media (max-width: 800px) {
+        .featured-section {
+          flex-direction: column;
+          gap: 1rem;
+          padding: 1rem 0.5rem;
+        }
+        .featured-section .featured-image-link {
+          max-width: 100%;
+        }
+      }
+      .featured-images {
+        display: flex;
+        gap: 1rem;
+        flex: 3 1 400px;
+        max-width: 700px;
+        min-width: 220px;
+      }
+      .featured-images img {
+        width: 100%;
+        max-width: 320px;
+        height: auto;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+        transition: transform 0.2s ease;
+        cursor: pointer;
+      }
+      .featured-images img:hover {
+        transform: scale(1.02);
+      }
+      @media (max-width: 800px) {
+        .featured-images {
+          flex-direction: column;
+          max-width: 100%;
+        }
+        .featured-images img {
+          max-width: 100%;
+        }
+      }
+      .feature-carousel {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0;
+        flex: 3 1 400px;
+        max-width: 900px;
+        min-width: 220px;
+        /* max-height will be set dynamically by JS */
+      }
+      .feature-carousel a {
+        display: block;
+        width: 100%;
+        position: relative;
+      }
+      .feature-carousel img {
+        width: 100%;
+        max-width: 600px;
+        /* max-height will be set dynamically by JS */
+        height: auto;
+        border-radius: 10px;
+        box-shadow: 0 2px 16px rgba(0,0,0,0.10);
+        transition: transform 0.2s ease;
+        cursor: pointer;
+        display: block;
+        object-fit: contain;
+      }
+      .feature-arrow {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: #fff;
+        border: none;
+        border-radius: 50%;
+        width: 44px;
+        height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.7rem;
+        color: #222;
+        cursor: pointer;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+        transition: background 0.2s, color 0.2s, opacity 0.2s;
+        opacity: 0;
+        z-index: 2;
+        pointer-events: none;
+        border: 1px solid #eee;
+      }
+      .feature-carousel:hover .feature-arrow {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #feature-prev {
+        left: 18px;
+      }
+      #feature-next {
+        right: 18px;
+      }
+      .feature-arrow svg {
+        width: 22px;
+        height: 22px;
+        display: block;
+      }
+      .feature-arrow:focus {
+        outline: none;
+        box-shadow: 0 0 0 2px #b3d4fc;
+      }
+      .feature-arrow:hover {
+        background: #f7f7f7;
+        color: #111;
+        opacity: 1;
+      }
+      @media (max-width: 900px) {
+        .feature-carousel {
+          max-width: 100%;
+        }
+        .feature-carousel img {
+          max-width: 100%;
+        }
+        .feature-arrow {
+          width: 32px;
+          height: 32px;
+          font-size: 1.1rem;
+        }
+        #feature-prev {
+          left: 6px;
+        }
+        #feature-next {
+          right: 6px;
+        }
+      }
+      .feature-box {
+        width: 700px;
+        height: 500px;
+        background: #fff;
+        border-radius: 12px;
+        box-shadow: 0 2px 16px rgba(0,0,0,0.10);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        margin-bottom: 1.5rem;
+        overflow: hidden;
+        max-width: 100vw;
+        max-height: 70vw;
+      }
+      .feature-box a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        flex: 1 1 auto;
+      }
+      .feature-box img#feature-main-img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        border-radius: 12px 12px 0 0;
+        background: #f7f7f7;
+        box-shadow: none;
+        display: block;
+        max-width: 100%;
+        max-height: 100%;
+      }
+      .feature-nav-arrow {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: #fff;
+        border: none;
+        border-radius: 50%;
+        width: 44px;
+        height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.7rem;
+        color: #222;
+        cursor: pointer;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+        transition: background 0.2s, color 0.2s, opacity 0.2s;
+        opacity: 0.7;
+        z-index: 2;
+        border: 1px solid #eee;
+      }
+      .feature-nav-arrow:focus {
+        outline: none;
+        box-shadow: 0 0 0 2px #b3d4fc;
+      }
+      .feature-nav-arrow:hover {
+        background: #f7f7f7;
+        color: #111;
+        opacity: 1;
+      }
+      #feature-prev {
+        left: 10px;
+      }
+      #feature-next {
+        right: 10px;
+      }
+      .feature-nav-arrow svg {
+        width: 22px;
+        height: 22px;
+        display: block;
+      }
+      .feature-thumbnails {
+        display: flex;
+        flex-direction: row;
+        gap: 0.5rem;
+        padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+        background: transparent;
+        border-radius: 0 0 12px 12px;
+        overflow-x: auto;
+        width: auto;
+        justify-content: center;
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 12px;
+        z-index: 3;
+        pointer-events: auto;
+      }
+      .feature-thumb {
+        width: 44px;
+        height: 32px;
+        object-fit: contain;
+        border-radius: 6px;
+        border: 2px solid transparent;
+        cursor: pointer;
+        transition: border 0.2s, box-shadow 0.2s;
+        box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+        background: #fff;
+        display: block;
+      }
+      .feature-thumb.selected {
+        border: 2px solid #222;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+      }
+      @media (max-width: 900px) {
+        .feature-box {
+          width: 98vw;
+          height: 54vw;
+          min-height: 220px;
+          max-height: 70vw;
+        }
+        .feature-thumbnails {
+          width: 100%;
+          left: 0;
+          right: 0;
+          bottom: 6px;
+        }
+        .feature-nav-arrow {
+          width: 32px;
+          height: 32px;
+          font-size: 1.1rem;
+        }
+        #feature-prev {
+          left: 2px;
+        }
+        #feature-next {
+          right: 2px;
+        }
+        .feature-thumb {
+          width: 32px;
+          height: 24px;
+        }
+      }
     </style>
   </head>
   <body>
     <h1>Blacksmith Work</h1>
+    <div id="features"></div>
     <div class="gallery" id="gallery"></div>
 
     <script>
@@ -70,7 +383,9 @@
       const folderPath = "images";
       const branch = "main";
 
-      fetch(
+      // Load feature sections dynamically
+      const featuresDiv = document.getElementById('features');
+      const galleryPromise = fetch(
         `https://corsproxy.io/?https://api.github.com/repos/${repoOwner}/${repoName}/contents/${folderPath}`
       )
         .then((response) => response.json())
@@ -88,7 +403,6 @@
               link.href = imageUrl;
               link.className = "glightbox";
               link.setAttribute("data-gallery", "blacksmith");
-              // link.setAttribute("data-title", file.replace(/\.[^.]+$/, ""));
 
               const img = document.createElement("img");
               img.src = imageUrl;
@@ -101,12 +415,50 @@
               link.appendChild(img);
               gallery.appendChild(link);
             });
-
-          const lightbox = GLightbox({ selector: ".glightbox" });
-        })
-        .catch((err) => {
-          console.error("Fetch failed:", err);
         });
+      const featurePromise = fetch('features/sword/feature.html')
+        .then(res => res.text())
+        .then(html => {
+          featuresDiv.innerHTML += html;
+        });
+      Promise.all([galleryPromise, featurePromise]).then(() => {
+        GLightbox({ selector: ".glightbox" });
+        // Feature navigation logic
+        const featureImages = [
+          {
+            src: 'features/sword/IMG_2687.JPEG',
+            alt: 'Sword Feature 1'
+          },
+          {
+            src: 'features/sword/IMG_2028.JPEG',
+            alt: 'Sword Feature 2'
+          }
+        ];
+        let featureIndex = 0;
+        const mainImg = document.getElementById('feature-main-img');
+        const mainLink = document.getElementById('feature-main-link');
+        const thumbs = document.querySelectorAll('.feature-thumb');
+        const prevBtn = document.getElementById('feature-prev');
+        const nextBtn = document.getElementById('feature-next');
+        function updateFeature(idx) {
+          featureIndex = idx;
+          mainImg.src = featureImages[featureIndex].src;
+          mainImg.alt = featureImages[featureIndex].alt;
+          mainLink.href = featureImages[featureIndex].src;
+          thumbs.forEach((t, i) => t.classList.toggle('selected', i === featureIndex));
+        }
+        thumbs.forEach((thumb, idx) => {
+          thumb.addEventListener('click', function() {
+            updateFeature(idx);
+          });
+        });
+        prevBtn.addEventListener('click', function() {
+          updateFeature((featureIndex - 1 + featureImages.length) % featureImages.length);
+        });
+        nextBtn.addEventListener('click', function() {
+          updateFeature((featureIndex + 1) % featureImages.length);
+        });
+      });
     </script>
   </body>
 </html>
