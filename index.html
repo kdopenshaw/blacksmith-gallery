@@ -11,17 +11,63 @@
     <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
     <style>
       body {
-        font-family: sans-serif;
+        font-family: 'Segoe UI', 'Helvetica Neue', Arial, 'Liberation Sans', sans-serif;
         background: #fff;
         margin: 0;
         padding: 1rem;
       }
-
+      h1 {
+        font-family: 'Playfair Display', serif;
+        font-size: 2.7rem;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+        color: #181818;
+        text-align: center;
+        margin-bottom: 1.2rem;
+        text-shadow: 0 2px 12px rgba(0,0,0,0.08);
+      }
+      h2 {
+        font-family: 'Playfair Display', serif;
+        font-size: 1.7rem;
+        font-weight: 600;
+        letter-spacing: 0.03em;
+        color: #7a4e18;
+        margin-bottom: 0.5rem;
+        text-shadow: 0 1px 6px rgba(122,78,24,0.08);
+      }
+      .featured-section {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        max-width: 1200px;
+        margin: 1.2rem auto 1.2rem auto;
+        background: #f7f7f7;
+        border-radius: 12px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+        padding: 2rem 1rem;
+        gap: 2rem;
+        flex-wrap: wrap;
+      }
+      .featured-text {
+        flex: 1 1 180px;
+        min-width: 120px;
+        font-size: 1.08rem;
+        line-height: 1.6;
+        color: #6a5c4a;
+        margin-left: 0.5rem;
+        font-family: 'Georgia', 'Times New Roman', serif;
+        letter-spacing: 0.01em;
+        background: none;
+        border-radius: 8px;
+        padding: 0.7rem 1rem;
+        box-shadow: 0 1px 2px rgba(122,78,24,0.04);
+        text-shadow: none;
+      }
       .gallery {
         column-count: 4;
         column-gap: 12px;
         max-width: 1200px;
-        margin: auto;
+        margin: 0.5rem auto 0 auto;
       }
 
       .gallery a {
@@ -59,19 +105,6 @@
         }
       }
 
-      .featured-section {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        max-width: 1200px;
-        margin: 2rem auto;
-        background: #f7f7f7;
-        border-radius: 12px;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.07);
-        padding: 2rem 1rem;
-        gap: 2rem;
-        flex-wrap: wrap;
-      }
       .featured-section .featured-image-link {
         flex: 3 1 400px;
         display: block;
@@ -88,14 +121,6 @@
       }
       .featured-section img:hover {
         transform: scale(1.02);
-      }
-      .featured-section .featured-text {
-        flex: 1 1 180px;
-        min-width: 120px;
-        font-size: 1rem;
-        line-height: 1.5;
-        color: #333;
-        margin-left: 0.5rem;
       }
       .featured-section h2 {
         margin-top: 0;
