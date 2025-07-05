@@ -1,0 +1,14 @@
+{
+  "title": "Featured: Sword",
+  "description": "This hand-forged sword showcases traditional blacksmithing techniques, blending strength and elegance. The blade was shaped and tempered by hand, with a custom hilt and detailed finish. A true centerpiece of the collection.",
+  "images": [
+    {
+      "src": "features/sword/IMG_2687.JPEG",
+      "alt": "Sword Feature 1"
+    },
+    {
+      "src": "features/sword/IMG_2028.JPEG", 
+      "alt": "Sword Feature 2"
+    }
+  ]
+} 

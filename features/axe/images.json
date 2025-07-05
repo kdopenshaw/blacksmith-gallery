@@ -1,0 +1,14 @@
+{
+  "title": "Featured: Axe",
+  "description": "This handcrafted axe demonstrates exceptional blacksmithing artistry, combining traditional techniques with modern precision. Each strike of the hammer has been carefully placed to create a blade that is both beautiful and deadly effective.",
+  "images": [
+    {
+      "src": "features/axe/axe1.jpg",
+      "alt": "Axe Feature 1"
+    },
+    {
+      "src": "features/axe/axe2.jpg",
+      "alt": "Axe Feature 2"
+    }
+  ]
+} 
