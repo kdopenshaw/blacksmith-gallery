@@ -1,14 +1,20 @@
 {
   "title": "Featured: Axe",
-  "description": "This handcrafted axe demonstrates exceptional blacksmithing artistry, combining traditional techniques with modern precision. Each strike of the hammer has been carefully placed to create a blade that is both beautiful and deadly effective.",
   "images": [
     {
       "src": "features/axe/axe1.jpg",
-      "alt": "Axe Feature 1"
+      "alt": "Axe Feature 1",
+      "description": "This handcrafted axe demonstrates exceptional blacksmithing artistry, combining traditional techniques with modern precision. Each strike of the hammer has been carefully placed to create a blade that is both beautiful and deadly effective."
     },
     {
       "src": "features/axe/axe2.jpg",
-      "alt": "Axe Feature 2"
+      "alt": "Axe Feature 2",
+      "description": "A detailed view of the axe head showing the perfect balance between form and function. The tempered steel reveals a subtle pattern that tells the story of its creation through fire and hammer."
+    },
+    {
+      "src": "features/axe/axe3.jpg",
+      "alt": "Axe Feature 3",
+      "description": "The complete axe in all its glory - from the finely crafted head to the custom-fitted handle. This piece represents the pinnacle of functional art, where every element serves both purpose and beauty."
     }
   ]
 } 
